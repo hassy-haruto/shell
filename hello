@@ -1,16 +1,23 @@
 #!/bin/bash
-# comment
+# 変数 -> _か英数字のみ
+# '' だと変数の中身が展開されない
+# 内容を書き換えてほしくない変数を作りたい時は、readonlyというキーワードを使う
 
-echo 'hello world'
-echo "hello world"
+# name　=　"ohashi"　間空けるとエラー
 
-echo "foo"; echo "bar"
+readonly name="ohashi"
+name="hassy"
+
+echo 'morning $name'
+echo "hello $name"
+echo "bye ${name}san"
+
 
 # 実行コマンド
 # hashiguchi.haruto-01@mbp shell % ./hello
-# hello world
-# hello world
-# foo
-# bar
+# ./hello: line 9: name: readonly variable
+# morning $name
+# hello ohashi
+# bye ohashisan
 
 
