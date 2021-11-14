@@ -1,7 +1,16 @@
 #!/bin/bash
+# comment
 
-echo hello
+echo 'hello world'
+echo "hello world"
+
+echo "foo"; echo "bar"
 
 # 実行コマンド
 # hashiguchi.haruto-01@mbp shell % ./hello
-# hello
+# hello world
+# hello world
+# foo
+# bar
+
+
