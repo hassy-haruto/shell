@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo hello
+
+# 実行コマンド
+# hashiguchi.haruto-01@mbp shell % ./hello
+# hello
