@@ -1,47 +1,28 @@
 #!/bin/bash
+# 配列
 
-read name
-echo "hello $name"
+colors=(red blue pink)
 
-#実行コマンド
-# hashiguchi.haruto-01@mbp shell % ./hello
-# hashiguchi　ユーザーに入力させる
-# hello hashiguchi
-
-
-read -p "Name: " name # -pはプロンプトの意
-echo "hello $name"
+echo ${colors[0]} # red
+echo ${colors[1]} # blue
+echo ${colors[2]} # pink
+echo ${colors[@]} # red blue pink
+echo ${#colors[@]} # 3 (個数を表示したい場合パウンド記号を使う)
 
 # 実行コマンド
 # hashiguchi.haruto-01@mbp shell % ./hello
-# Name: hashiguchi　ユーザーに入力させる
-# hello hashiguchi
-
-
-read -p "Pick 3 colors: " c1 c2 c3
-echo $c1
-echo $c2
-echo $c3
-
-# 実行コマンド
-# hashiguchi.haruto-01@mbp shell % ./hello
-# Pick 3 colors: red blue green　ユーザーに入力させる
 # red
 # blue
-# green
+# pink
+# red blue pink
+# 3
+
+colors=(red blue pink)
+
+colors[1]=silver
+colors+=(green orange)
+echo ${colors[@]}
 
 # 実行コマンド
 # hashiguchi.haruto-01@mbp shell % ./hello
-# Pick 3 colors: red blue 　一つ足りない場合
-# red
-# blue
-
-# hashiguchi.haruto-01@mbp shell % 
-
-# 実行コマンド
-# hashiguchi.haruto-01@mbp shell % ./hello
-# Pick 3 colors: red blue　green pink 　一つ多い場合
-# red
-# blue
-# green pink 最後にふたつ並ぶ
-# hashiguchi.haruto-01@mbp shell % 
+# red silver pink green orange
