@@ -1,28 +1,24 @@
 #!/bin/bash
-# 配列
 
-colors=(red blue pink)
+# echo 5+2
 
-echo ${colors[0]} # red
-echo ${colors[1]} # blue
-echo ${colors[2]} # pink
-echo ${colors[@]} # red blue pink
-echo ${#colors[@]} # 3 (個数を表示したい場合パウンド記号を使う)
+# echo `expr 5 + 2`
+
+echo $((5 + 2))
 
 # 実行コマンド
 # hashiguchi.haruto-01@mbp shell % ./hello
-# red
-# blue
-# pink
-# red blue pink
-# 3
+# 7
 
-colors=(red blue pink)
+n=5
+#(($n=$n+5))
+((n=n+5))
+echo $n
 
-colors[1]=silver
-colors+=(green orange)
-echo ${colors[@]}
-
-# 実行コマンド
 # hashiguchi.haruto-01@mbp shell % ./hello
-# red silver pink green orange
+# 10
+
+# + - * / % ** ++ --
+
+echo $((10 / 3)) # 3 ->bashでは整数の演算しかできないため、小数点は省かれる
+
