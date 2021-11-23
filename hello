@@ -1,24 +1,24 @@
 #!/bin/bash
+#if
 
-# echo 5+2
+read -p "Name? " name
+# if [test] "$name" = "ohashi"
+# if [ "$name" = "ohashi" ]
+# then
+#   echo "welcome"
+# elif [ "$name" = "hashiguchi" ]
+# then
+#   echo "welcome too"
+# else 
+#   echo "you are not allowed"
+# fi
 
-# echo `expr 5 + 2`
-
-echo $((5 + 2))
+if [ "$name" = "ohashi" ]; then
+  echo "welcome"
+elif [ "$name" = "hashiguchi" ]; then
+  echo "welcome too"
+else 
+  echo "you are not allowed"
+fi
 
 # 実行コマンド
-# hashiguchi.haruto-01@mbp shell % ./hello
-# 7
-
-n=5
-#(($n=$n+5))
-((n=n+5))
-echo $n
-
-# hashiguchi.haruto-01@mbp shell % ./hello
-# 10
-
-# + - * / % ** ++ --
-
-echo $((10 / 3)) # 3 ->bashでは整数の演算しかできないため、小数点は省かれる
-
