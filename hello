@@ -1,33 +1,23 @@
 #!/bin/bash
 #if
-# test や [] は実は若干古い書き方で、今は文字列やファイルの比較には [[]] 、そして数値の比較には (()) がよく使われる
-#[[]]
-#(())
+AND は && 、 OR が || 、NOT は !
+#&& || !
 
-read -p "Name? " name
-if [test] "$name" = "ohashi"
-if [ "$name" = "ohashi" ]
-then
-  echo "welcome"
-fi
+# 種類を問わず存在しているか調べるには-e
+# ファイルが存在しているかは-f
+# ディレクトリが存在しているかどうかは-d
+# -e -f -d
 
-# 等しいかどうかは = か == で調べることができて、等しくないは != 、もしくは文字列の長さが 0 かどうかは -z 、そして正規表現は =~ で調べられる
+# if [[ -f $0 ]]; then
+#   echo "file exists..."
+# fi
 
-# = == != -z =~
-if [[ $name = "taguchi" ]]; then
-  echo "welcome"
-fi
+# if [[ -f $0 ]]; then
+#   echo "dir exists..."
+# fi
 
-# 名前の長さが0の場合
-if [[ -z $name ]]; then
-  echo "empty..."
-fi
-
-# 名前がtから始まる場合
-if [[ $name =~ ^t ]]; then
-  echo "starts with t..."
-fi
-
-if [[ $name -z  ]]; then
-  echo "welcome"
+# == != > >= < <=
+read -p "Number? " n
+if ((n > 10));then
+  echo "bigger than 10"
 fi
