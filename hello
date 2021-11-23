@@ -1,24 +1,33 @@
 #!/bin/bash
 #if
+# test や [] は実は若干古い書き方で、今は文字列やファイルの比較には [[]] 、そして数値の比較には (()) がよく使われる
+#[[]]
+#(())
 
 read -p "Name? " name
-# if [test] "$name" = "ohashi"
-# if [ "$name" = "ohashi" ]
-# then
-#   echo "welcome"
-# elif [ "$name" = "hashiguchi" ]
-# then
-#   echo "welcome too"
-# else 
-#   echo "you are not allowed"
-# fi
-
-if [ "$name" = "ohashi" ]; then
+if [test] "$name" = "ohashi"
+if [ "$name" = "ohashi" ]
+then
   echo "welcome"
-elif [ "$name" = "hashiguchi" ]; then
-  echo "welcome too"
-else 
-  echo "you are not allowed"
 fi
 
-# 実行コマンド
+# 等しいかどうかは = か == で調べることができて、等しくないは != 、もしくは文字列の長さが 0 かどうかは -z 、そして正規表現は =~ で調べられる
+
+# = == != -z =~
+if [[ $name = "taguchi" ]]; then
+  echo "welcome"
+fi
+
+# 名前の長さが0の場合
+if [[ -z $name ]]; then
+  echo "empty..."
+fi
+
+# 名前がtから始まる場合
+if [[ $name =~ ^t ]]; then
+  echo "starts with t..."
+fi
+
+if [[ $name -z  ]]; then
+  echo "welcome"
+fi
