@@ -1,23 +1,34 @@
 #!/bin/bash
-#if
-AND は && 、 OR が || 、NOT は !
-#&& || !
 
-# 種類を問わず存在しているか調べるには-e
-# ファイルが存在しているかは-f
-# ディレクトリが存在しているかどうかは-d
-# -e -f -d
+# 1~5を順番に出力したい場合
+for i in 1 2 3 4 5
+do
+  echo $i
+done
 
-# if [[ -f $0 ]]; then
-#   echo "file exists..."
-# fi
+# 条件の部分で配列を使用できる
+a=(1 2 3 4 5)
 
-# if [[ -f $0 ]]; then
-#   echo "dir exists..."
-# fi
+for i in ${a[@]} # 配列を全て展開
+do
+  echo $i
+done
 
-# == != > >= < <=
-read -p "Number? " n
-if ((n > 10));then
-  echo "bigger than 10"
-fi
+# 条件を書かない方法は、seqを使う
+for i in `seq 1 100`
+do
+  echo $i
+done
+# 1~100まで出力される
+
+for i in `seq 1 5 100`
+do
+  echo $i
+done
+# 1~100までを、第二引数の値ずつ出力
+
+for i in `seq 3 5`
+do
+  echo $i
+done
+# 引数が二つの場合、第一引数から第二引数まで1 or -1ずつ出力
