@@ -1,28 +1,19 @@
 #!/bin/bash
-# while
+# case
 
-#1から10まで出力
-i=0
-while [ $i -lt 10 ] #前後の空白マスト
-do
-  i=`expr $i + 1`
-  echo $i
-done
-
-# ifと併用して、continueとbreakを使用できる
-i=0
-while :
-do
-  i=`expr $i + 1`
-  # $iが3であればスキップ
-  if [ $i -eq 3 ]; then
-    continue
-  fi
-  # $iが10より大きければループを抜ける
-  if [ $i -gt 10 ]; then
-    break
-  fi
-
-  echo $i
-done
-
+signal="blue"
+case $signal in
+  "red")     #redの場合
+    echo "stop!"
+  ;;
+  "yellow")     #yellowの場合
+    echo "caution"
+  ;;
+  "green")
+    echo "go!"     #greenの場合
+  ;;
+  *)
+    echo "..." #その他の場合
+  ;;
+esac
+#stop!
