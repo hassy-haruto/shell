@@ -1,19 +1,29 @@
 #!/bin/bash
-# case
+# 関数
 
-signal="blue"
-case $signal in
-  "red")     #redの場合
-    echo "stop!"
-  ;;
-  "yellow")     #yellowの場合
-    echo "caution"
-  ;;
-  "green")
-    echo "go!"     #greenの場合
-  ;;
-  *)
-    echo "..." #その他の場合
-  ;;
-esac
-#stop!
+function hello() {
+  echo "hello"
+}
+
+# 関数の呼び出し
+hello
+
+function hello() {
+  echo "hello $1 and $2"
+}
+
+# 関数の呼び出し
+hello Mike Tom
+
+# シェルスクリプトでは関数内で宣言しても、関数外で使用できる
+function hello() {
+  echo "hello $1 and $2"
+  i=5
+  echo $i
+}
+
+#関数の呼び出し
+hello Mike Tom
+echo $i
+
+# これは関数内、関数外両方ともでecho出力される
